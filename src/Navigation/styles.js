@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native";
 import colors from "../Constants/colors";
 import strings from "../Constants/strings";
 export default StyleSheet.create({
-    header:{
+    headerAlbum:{
+        title:strings.topAlbums,
         headerTitleAlign:'center',
-        title: strings.musicExplorer,
         headerStyle: {
             backgroundColor: colors.theme,
         },
@@ -12,5 +12,17 @@ export default StyleSheet.create({
         headerTitleStyle: {
             fontWeight: '500',
         },
-    }
+    },
+    headerSongs:{
+        title:strings.tracks,
+        headerTitleAlign:'center',
+        headerStyle: {
+            backgroundColor: colors.theme,
+        },
+        headerTintColor: colors.white,
+        headerTitleStyle: {
+            fontWeight: '500',
+        },
+    },
+
     });

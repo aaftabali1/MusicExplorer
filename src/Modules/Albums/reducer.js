@@ -1,8 +1,9 @@
-import {API_FAILED, API_REQUEST, API_SUCCESS} from './action';
+import {API_FAILED, API_REQUEST, API_SUCCESS, ON_SELECT_ALBUM} from './action';
 
 const initialState = {
   isLoading: false,
   error: null,
+  data: null
 };
 
 export default (state = initialState, action) => {
@@ -23,6 +24,11 @@ export default (state = initialState, action) => {
         isLoading: false,
         error: action.error,
       };
+    case ON_SELECT_ALBUM:
+      return{
+        ...state,
+        data: action.data
+      }
 
     default:
       return state;

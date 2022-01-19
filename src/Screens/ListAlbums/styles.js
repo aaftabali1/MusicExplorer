@@ -8,6 +8,7 @@ import {
 export default StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:colors.black
   },
   albumList: {
     flex: 1,
@@ -62,7 +63,7 @@ export default StyleSheet.create({
   itemContainer: {
     flex: 1,
     margin: 5,
-    minHeight: heightPercentageToDP('18%'),
+    height: heightPercentageToDP('15%'),
     borderRadius: 8,
   },
   loadMoreBtn: {

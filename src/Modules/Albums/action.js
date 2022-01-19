@@ -1,6 +1,7 @@
 export const API_REQUEST = "API_REQUEST";
 export const API_SUCCESS = "API_SUCCESS";
 export const API_FAILED = "API_FAILED";
+export const ON_SELECT_ALBUM = 'ON_SELECT_ALBUM';
 
 export const apiRequest = () => {
   return {
@@ -20,3 +21,10 @@ export const apiFailed = (error) => {
     error,
   };
 };
+
+export const onSelectAlbum = (data) => {
+  return {
+    type: ON_SELECT_ALBUM,
+    data,
+  }
+}
