@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "musicExplorer.app"
-               BlueprintName = "musicExplorer"
-               ReferencedContainer = "container:musicExplorer.xcodeproj">
+               BuildableName = "MusicExplorer.app"
+               BlueprintName = "MusicExplorer"
+               ReferencedContainer = "container:MusicExplorer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "musicExplorerTests.xctest"
-               BlueprintName = "musicExplorerTests"
-               ReferencedContainer = "container:musicExplorer.xcodeproj">
+               BuildableName = "MusicExplorerTests.xctest"
+               BlueprintName = "MusicExplorerTests"
+               ReferencedContainer = "container:MusicExplorer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "musicExplorer.app"
-            BlueprintName = "musicExplorer"
-            ReferencedContainer = "container:musicExplorer.xcodeproj">
+            BuildableName = "MusicExplorer.app"
+            BlueprintName = "MusicExplorer"
+            ReferencedContainer = "container:MusicExplorer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "musicExplorer.app"
-            BlueprintName = "musicExplorer"
-            ReferencedContainer = "container:musicExplorer.xcodeproj">
+            BuildableName = "MusicExplorer.app"
+            BlueprintName = "MusicExplorer"
+            ReferencedContainer = "container:MusicExplorer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
