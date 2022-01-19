@@ -13,6 +13,9 @@ import styles from './styles';
 import moment from 'moment';
 import strings from '../../Constants/strings';
 import images from '../../Constants/images';
+import {store} from '../../App'
+import { onSelectAlbum } from '../../Modules/Albums/action';
+import routeName from '../../Constants/routeName';
 
 export default class ListAlbums extends Component {
   constructor(props) {
@@ -29,19 +32,22 @@ export default class ListAlbums extends Component {
     /* getting initial album data */
     this.props.getAlbumData(this.state.page, albums => {
       this.setState({albumData: albums});
-      console.log(albums);
     });
   }
   /* Rendering albums in FlatList Here:- */
   renderItem = ({item}) => {
+    
     return (
-      <TouchableOpacity style={[styles.dropShadow, styles.itemContainer]}>
+      <TouchableOpacity activeOpacity={.8} onPress={()=>{
+        this.goToListSongs(item)
+      }} style={[styles.dropShadow, styles.itemContainer]}>
         <View style={styles.item}>
           <Image style={styles.itemImage} source={images.music}/>
           <Text style={styles.albumName} numberOfLines={1}>
             {item.name}
           </Text>
-          <Text style={styles.artistName}>{item.artistName}</Text>
+          {/* Seprating Artist name with commas */}
+          <Text style={styles.artistName}>{item.artistName.replaceAll('&',',')}</Text>
           <Text style={styles.songsCount}>{item.trackCount} Songs</Text>
           <Text style={styles.albumDate}>
             {moment(item.released).format('MMM YYYY')}
@@ -50,6 +56,13 @@ export default class ListAlbums extends Component {
       </TouchableOpacity>
     );
   };
+
+  /* Navigating to songs list when album is selected */
+  goToListSongs=({links})=>{
+    /* Storing selected album data to redux store  */
+    store.dispatch(onSelectAlbum(links))
+    this.props.navigation.navigate(routeName.songList);    
+  }
 
   /* Loading more items when end reached */
   loadMoreAlbums = () => {

@@ -1,5 +1,6 @@
 export default {
-    musicExplorer:'Music Explorer',
+    tracks:'Tracks',
+    topAlbums:'Top Albums',
     pleaseWait:'Please Wait...',
     loadMoreAlbums:'LOAD MORE ALBUMS'
 }
