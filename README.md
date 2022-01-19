@@ -1,2 +1,2 @@
 # MusicExplorer
-App to browse and listen the music.
+App for listening and exploring music
