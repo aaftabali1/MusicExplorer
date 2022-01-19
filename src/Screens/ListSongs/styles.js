@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../Constants/colors';
 import {
+  heightPercentageToDP,
   widthPercentageToDP,
 } from 'react-native-responsive-screen';
 
@@ -13,13 +14,16 @@ export default StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     paddingVertical: 10,
+    marginBottom:20
   },
   item: {
     flex: 1, 
     padding:10,
     marginBottom:10,
     borderRadius: 8,
-    flexDirection:'row'
+    flexDirection:'row',
+    opacity:0.8,
+    height:heightPercentageToDP('10%')
   },
   songName:{
     fontSize: widthPercentageToDP('3.8%'),
@@ -30,6 +34,12 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontSize: widthPercentageToDP('3.3%'),
     color: colors.white,
+  },
+  albumImage:{
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    backgroundColor: 'transparent',
   },
   time:{
     fontStyle:'italic',
@@ -44,13 +54,22 @@ export default StyleSheet.create({
     shadowRadius: 2,
     elevation: 4,
   },
-  playBtn:{
+  previewBtn:{
     position:'absolute',
     resizeMode:'contain',
-    right:0,
+    right:10,
     alignSelf:'center',
-    height:50,
-    width:50
+    borderColor: colors.black,
+    borderRadius: 16,
+    borderWidth: 0.5,
+    padding: 8,
+    backgroundColor: colors.theme,
+    opacity: 0.8,
+
+  },
+  previewTxt:{
+      fontWeight: '500',
+      color: colors.white,
   }
 
 });

@@ -1,4 +1,5 @@
 export default {
 albumList: 'albumList',
-songList:'songList'
+songList:'songList',
+player:'player'
 };
