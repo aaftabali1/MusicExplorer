@@ -1,9 +1,10 @@
-import {API_FAILED, API_REQUEST, API_SUCCESS, ON_SELECT_ALBUM} from './action';
+import {API_FAILED, API_REQUEST, API_SUCCESS, ON_SELECT_ALBUM,SAVE_TRACKS} from './action';
 
 const initialState = {
   isLoading: false,
   error: null,
-  data: null
+  data: null,
+  tracks: null,
 };
 
 export default (state = initialState, action) => {
@@ -29,7 +30,11 @@ export default (state = initialState, action) => {
         ...state,
         data: action.data
       }
-
+  case SAVE_TRACKS:
+    return{
+      ...state,
+      tracks: action.tracks
+    }
     default:
       return state;
   }

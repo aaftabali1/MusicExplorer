@@ -24,5 +24,16 @@ export default StyleSheet.create({
             fontWeight: '500',
         },
     },
-
+    headerPlayer:{
+        title:strings.player,
+        headerTitleAlign:'center',
+        headerStyle: {
+            backgroundColor: colors.theme,
+        },
+        headerTintColor: colors.white,
+        headerTitleStyle: {
+            fontWeight: '500',
+        },
+    }
+ 
     });

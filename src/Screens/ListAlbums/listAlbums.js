@@ -16,6 +16,7 @@ import images from '../../Constants/images';
 import {store} from '../../App'
 import { onSelectAlbum } from '../../Modules/Albums/action';
 import routeName from '../../Constants/routeName';
+import { initialize } from '../../Services/audioPlayer';
 
 export default class ListAlbums extends Component {
   constructor(props) {
@@ -32,8 +33,11 @@ export default class ListAlbums extends Component {
     /* getting initial album data */
     this.props.getAlbumData(this.state.page, albums => {
       this.setState({albumData: albums});
+      /* initialize the player */
+      initialize();
     });
   }
+
   /* Rendering albums in FlatList Here:- */
   renderItem = ({item}) => {
     
@@ -46,8 +50,9 @@ export default class ListAlbums extends Component {
           <Text style={styles.albumName} numberOfLines={1}>
             {item.name}
           </Text>
+
           {/* Seprating Artist name with commas */}
-          <Text style={styles.artistName}>{item.artistName.replaceAll('&',',')}</Text>
+          <Text style={styles.artistName}>{item.artistName.replace('&',',')}</Text>
           <Text style={styles.songsCount}>{item.trackCount} Songs</Text>
           <Text style={styles.albumDate}>
             {moment(item.released).format('MMM YYYY')}
@@ -59,6 +64,7 @@ export default class ListAlbums extends Component {
 
   /* Navigating to songs list when album is selected */
   goToListSongs=({links})=>{
+
     /* Storing selected album data to redux store  */
     store.dispatch(onSelectAlbum(links))
     this.props.navigation.navigate(routeName.songList);    
@@ -68,8 +74,10 @@ export default class ListAlbums extends Component {
   loadMoreAlbums = () => {
     /* Updating Pages when scroll ends */
     const newPage = this.state.page + 1;
+   
     /* Getting new albums from API */
     this.props.getAlbumData(newPage, albums => {
+    
       /* updating states and inserting album data */
       this.setState({
         albumData: [...this.state.albumData, ...albums],
@@ -89,10 +97,13 @@ export default class ListAlbums extends Component {
             style={styles.albumList}
             /* genrating unique key */
             keyExtractor={(item, index) => index.toString()}
+
             /* adding album data to flatlist */
             data={this.state.albumData}
+
             /* Disable verticle scroll indicator */
             showsVerticalScrollIndicator={false}
+            
             /* setting number of columns */
             numColumns={2}
             onScroll={({nativeEvent}) => {

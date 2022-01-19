@@ -19,7 +19,7 @@ const Loader = (props) => {
         <View style={styles.activityIndicatorWrapper}>
           <ActivityIndicator
             animating={loading}
-            color={colors.white}
+            color={colors.black}
             size="large"
           />
           <Text style={styles.text}>{strings.pleaseWait}</Text>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.loader,
   },
   activityIndicatorWrapper: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.white,
     padding: 20,
     borderRadius: 10,
     opacity: 0.4,
@@ -48,8 +48,9 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 5,
-    color: colors.white,
+    color: colors.black,
     fontSize: 18,
+    fontWeight:'bold'
   },
 });
 
